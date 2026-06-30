@@ -29,6 +29,28 @@ strips.forEach((item) => {
   });
 });
 
+// ===================== HAMBURGER MENU =====================
+const hamburger = document.querySelector('.nav-hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener('click', () => {
+    const open = hamburger.classList.toggle('is-open');
+    mobileMenu.classList.toggle('is-open', open);
+    hamburger.setAttribute('aria-expanded', open);
+    mobileMenu.setAttribute('aria-hidden', !open);
+  });
+
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('is-open');
+      mobileMenu.classList.remove('is-open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+    });
+  });
+}
+
 // ===================== FOOTER REVEAL =====================
 // Footer is position:fixed at bottom. page-wrap needs margin-bottom = footer height
 // so content is scrollable above the footer.

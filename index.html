@@ -23,14 +23,39 @@
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#about">About</a></li>
       </ul>
-      <a href="#pricing" class="btn btn-dark">Get Started Free</a>
+      <a href="#pricing" class="btn btn-dark nav-cta">Get Started Free</a>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
+      <a href="#pricing" class="btn btn-dark">Get Started Free</a>
+    </div>
   </header>
 
   <main>
 
     <!-- ===================== HERO ===================== -->
     <section class="hero-section">
+      <div class="hero-pattern" aria-hidden="true">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="cubic-grid" x="0" y="0" width="60" height="50" patternUnits="userSpaceOnUse">
+              <polygon points="30,1 59,16 30,31 1,16" fill="none" stroke="#111827" stroke-width="0.6" stroke-linejoin="round"/>
+              <line x1="1" y1="16" x2="1" y2="38" stroke="#111827" stroke-width="0.6"/>
+              <line x1="59" y1="16" x2="59" y2="38" stroke="#111827" stroke-width="0.6"/>
+              <line x1="30" y1="31" x2="30" y2="49" stroke="#111827" stroke-width="0.6"/>
+              <line x1="1" y1="38" x2="30" y2="49" stroke="#111827" stroke-width="0.6"/>
+              <line x1="59" y1="38" x2="30" y2="49" stroke="#111827" stroke-width="0.6"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#cubic-grid)"/>
+        </svg>
+      </div>
       <div class="hero-text">
         <h1 class="hero-headline">The workflow tool founders actually use.</h1>
         <p class="hero-sub">Flow gives your team a single place to manage work, track progress, and stay aligned — without the meetings about meetings.</p>
