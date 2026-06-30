@@ -1,6 +1,26 @@
+// ===================== SCROLL PROGRESS BAR =====================
+const scrollProgress = document.getElementById('scroll-progress');
+function updateScrollProgress() {
+  if (!scrollProgress) return;
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  scrollProgress.style.width = pct + '%';
+}
+window.addEventListener('scroll', updateScrollProgress, { passive: true });
+
+// ===================== CURSOR GLOW =====================
+const cursorGlow = document.getElementById('cursor-glow');
+if (cursorGlow && window.matchMedia('(min-width: 769px)').matches) {
+  document.addEventListener('mousemove', (e) => {
+    cursorGlow.style.left = e.clientX + 'px';
+    cursorGlow.style.top  = e.clientY + 'px';
+  }, { passive: true });
+}
+
 // ===================== TESTIMONIAL SWITCHER =====================
 const strips = document.querySelectorAll('.strip-item');
-const quote = document.querySelector('.testimonial-quote');
+const quote  = document.querySelector('.testimonial-quote');
 const authorName = document.querySelector('.author-name');
 const authorRole = document.querySelector('.author-role');
 
@@ -30,7 +50,7 @@ strips.forEach((item) => {
 });
 
 // ===================== HAMBURGER MENU =====================
-const hamburger = document.querySelector('.nav-hamburger');
+const hamburger  = document.querySelector('.nav-hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
 
 if (hamburger && mobileMenu) {
@@ -52,9 +72,7 @@ if (hamburger && mobileMenu) {
 }
 
 // ===================== FOOTER REVEAL =====================
-// Footer is position:fixed at bottom. page-wrap needs margin-bottom = footer height
-// so content is scrollable above the footer.
-const pageWrap = document.querySelector('.page-wrap');
+const pageWrap   = document.querySelector('.page-wrap');
 const siteFooter = document.querySelector('.site-footer');
 
 function syncFooterReveal() {
@@ -65,7 +83,7 @@ function syncFooterReveal() {
 syncFooterReveal();
 window.addEventListener('resize', syncFooterReveal);
 
-// ===================== CARD REVEAL (Intersection Observer) =====================
+// ===================== INTERSECTION OBSERVER: CARD REVEAL =====================
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -73,25 +91,36 @@ const revealObserver = new IntersectionObserver((entries) => {
       revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
 
 document.querySelectorAll('.card-reveal').forEach(el => revealObserver.observe(el));
+
+// ===================== SECTION HEADER REVEAL =====================
+const headerRevealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      headerRevealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.anim-section-header').forEach(el => headerRevealObserver.observe(el));
 
 // ===================== STAT COUNTER ANIMATION =====================
 function animateCounter(el) {
   const raw = el.dataset.target;
   if (!raw) return;
-  const target = parseFloat(raw);
-  const suffix = el.dataset.suffix || '';
+  const target   = parseFloat(raw);
+  const suffix   = el.dataset.suffix || '';
   const duration = 1400;
-  const start = performance.now();
+  const start    = performance.now();
 
   function tick(now) {
-    const elapsed = now - start;
+    const elapsed  = now - start;
     const progress = Math.min(elapsed / duration, 1);
-    // ease-out cubic
-    const eased = 1 - Math.pow(1 - progress, 3);
-    const current = Math.round(eased * target);
+    const eased    = 1 - Math.pow(1 - progress, 3);
+    const current  = Math.round(eased * target);
     el.textContent = current.toLocaleString() + suffix;
     if (progress < 1) requestAnimationFrame(tick);
   }
@@ -111,7 +140,6 @@ const statsSection = document.querySelector('.stats-section');
 if (statsSection) statsObserver.observe(statsSection);
 
 // ===================== PROGRESS BAR TRIGGER =====================
-// Trigger progress bar fills when the feature/how section enters viewport
 const progressObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -125,18 +153,38 @@ document.querySelectorAll('.feature-card, .how-card').forEach(el => {
   progressObserver.observe(el);
 });
 
-// ===================== ORBIT PULSE =====================
-// Subtle pulse animation on the center orbit node
-const orbitCenter = document.querySelector('.o-center');
-if (orbitCenter) {
-  let scale = 1;
-  setInterval(() => {
-    orbitCenter.style.transform = 'scale(1.04)';
-    orbitCenter.style.transition = 'transform 1s ease-in-out';
-    setTimeout(() => {
-      orbitCenter.style.transform = 'scale(1)';
-    }, 1000);
-  }, 3000);
+// ===================== ORBIT CSS PULSE =====================
+// Handled in CSS via @keyframes orbitPulse on .o-center
+
+// ===================== CARD 3D TILT =====================
+const tiltCards = document.querySelectorAll('.feature-card, .pricing-card');
+
+tiltCards.forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect   = card.getBoundingClientRect();
+    const cx     = rect.left + rect.width  / 2;
+    const cy     = rect.top  + rect.height / 2;
+    const dx     = (e.clientX - cx) / (rect.width  / 2);
+    const dy     = (e.clientY - cy) / (rect.height / 2);
+    const rotX   = -dy * 4;
+    const rotY   =  dx * 4;
+    card.style.transform = `perspective(900px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-4px) scale(1.005)`;
+    card.style.transition = 'transform 0.08s ease';
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+    card.style.transition = 'transform 0.35s cubic-bezier(0.34,1.2,0.64,1), box-shadow 0.35s';
+  });
+});
+
+// ===================== HERO PATTERN PARALLAX =====================
+const heroPattern = document.querySelector('.hero-pattern');
+if (heroPattern) {
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    heroPattern.style.transform = `translateY(${y * 0.2}px)`;
+  }, { passive: true });
 }
 
 // ===================== ACTIVE NAV LINK =====================
@@ -155,3 +203,38 @@ const navObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 
 sections.forEach(s => navObserver.observe(s));
+
+// ===================== BUTTON RIPPLE =====================
+document.querySelectorAll('.btn').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    const ripple = document.createElement('span');
+    const rect   = btn.getBoundingClientRect();
+    const size   = Math.max(rect.width, rect.height) * 1.5;
+    const x      = e.clientX - rect.left - size / 2;
+    const y      = e.clientY - rect.top  - size / 2;
+
+    Object.assign(ripple.style, {
+      position:      'absolute',
+      width:         size + 'px',
+      height:        size + 'px',
+      left:          x + 'px',
+      top:           y + 'px',
+      borderRadius:  '50%',
+      background:    'rgba(255,255,255,0.2)',
+      transform:     'scale(0)',
+      pointerEvents: 'none',
+      animation:     'rippleOut 0.5s ease-out forwards'
+    });
+
+    btn.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 600);
+  });
+});
+
+// Inject ripple keyframe once
+if (!document.getElementById('ripple-style')) {
+  const s = document.createElement('style');
+  s.id = 'ripple-style';
+  s.textContent = '@keyframes rippleOut { to { transform: scale(1); opacity: 0; } }';
+  document.head.appendChild(s);
+}

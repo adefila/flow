@@ -11,6 +11,11 @@
 </head>
 <body>
 
+<!-- Scroll progress bar -->
+<div class="scroll-progress" id="scroll-progress"></div>
+<!-- Cursor glow -->
+<div class="cursor-glow" id="cursor-glow"></div>
+
 <div class="page-wrap">
 
   <!-- ===================== NAV ===================== -->
@@ -23,7 +28,9 @@
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#about">About</a></li>
       </ul>
-      <a href="#pricing" class="btn btn-dark nav-cta">Get Started Free</a>
+      <a href="#pricing" class="btn btn-dark nav-cta">Get Started Free
+        <svg class="btn-icon" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H7M13 3v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
       <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -33,7 +40,9 @@
       <a href="#how-it-works">How it works</a>
       <a href="#pricing">Pricing</a>
       <a href="#about">About</a>
-      <a href="#pricing" class="btn btn-dark">Get Started Free</a>
+      <a href="#pricing" class="btn btn-dark">Get Started Free
+        <svg class="btn-icon" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H7M13 3v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
   </header>
 
@@ -56,43 +65,40 @@
           <rect width="100%" height="100%" fill="url(#cubic-grid)"/>
         </svg>
       </div>
-      <div class="hero-text">
+      <div class="hero-text anim-hero">
         <h1 class="hero-headline">The workflow tool founders actually use.</h1>
         <p class="hero-sub">Flow gives your team a single place to manage work, track progress, and stay aligned — without the meetings about meetings.</p>
       </div>
-      <div class="hero-cta">
-        <a href="#pricing" class="btn btn-dark btn-lg">Start for free</a>
+      <div class="hero-cta anim-hero anim-hero--delay">
+        <a href="#pricing" class="btn btn-dark btn-lg">Start for free
+          <svg class="btn-icon" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
         <p class="hero-microcopy">No credit card required. Up and running in under 5 minutes.</p>
       </div>
 
-      <!-- Integration orbit — fixed grid -->
+      <!-- Integration orbit -->
       <div class="orbit-container">
-        <!-- Row 1 -->
-        <div class="o-logo"><img src="https://www.figma.com/api/mcp/asset/250df722-f7f0-4117-b5ca-00d82255483b" alt="Slack"/></div>
+        <div class="o-logo o-float-1"><img src="https://www.figma.com/api/mcp/asset/250df722-f7f0-4117-b5ca-00d82255483b" alt="Slack"/></div>
         <div class="o-line-h"></div>
-        <div class="o-logo"><img src="https://www.figma.com/api/mcp/asset/b396d015-389a-42db-a4d3-d76e0355679b" alt="AWS"/></div>
+        <div class="o-logo o-float-2"><img src="https://www.figma.com/api/mcp/asset/b396d015-389a-42db-a4d3-d76e0355679b" alt="AWS"/></div>
         <div class="o-line-h"></div>
-        <div class="o-logo"><img src="https://www.figma.com/api/mcp/asset/5be42ed6-0f4e-40e6-81af-92eac61f3bb7" alt="Google Sheets"/></div>
-        <!-- V lines row 1→2 -->
+        <div class="o-logo o-float-3"><img src="https://www.figma.com/api/mcp/asset/5be42ed6-0f4e-40e6-81af-92eac61f3bb7" alt="Google Sheets"/></div>
         <div class="o-line-v"></div><div class="o-empty"></div>
         <div class="o-line-v"></div><div class="o-empty"></div>
         <div class="o-line-v"></div>
-        <!-- Row 2 -->
-        <div class="o-logo"><img src="https://www.figma.com/api/mcp/asset/294dabc3-501d-4ffa-824f-ee165110a38b" alt="Figma"/></div>
+        <div class="o-logo o-float-4"><img src="https://www.figma.com/api/mcp/asset/294dabc3-501d-4ffa-824f-ee165110a38b" alt="Figma"/></div>
         <div class="o-line-h"></div>
         <div class="o-center"><span>F</span></div>
         <div class="o-line-h"></div>
-        <div class="o-logo"><img src="https://www.figma.com/api/mcp/asset/3315c31b-717b-421e-b152-a2938638fd29" alt="Meta"/></div>
-        <!-- V lines row 2→3 -->
+        <div class="o-logo o-float-5"><img src="https://www.figma.com/api/mcp/asset/3315c31b-717b-421e-b152-a2938638fd29" alt="Meta"/></div>
         <div class="o-line-v"></div><div class="o-empty"></div>
         <div class="o-line-v"></div><div class="o-empty"></div>
         <div class="o-line-v"></div>
-        <!-- Row 3 -->
-        <div class="o-logo"><img src="https://www.figma.com/api/mcp/asset/9ea070e9-76f6-4769-9548-8e31eeda6a60" alt="Google Drive"/></div>
+        <div class="o-logo o-float-6"><img src="https://www.figma.com/api/mcp/asset/9ea070e9-76f6-4769-9548-8e31eeda6a60" alt="Google Drive"/></div>
         <div class="o-line-h"></div>
-        <div class="o-logo"><img src="https://www.figma.com/api/mcp/asset/ccbe36b5-1000-43f7-8193-9039ec3801ff" alt="Gmail"/></div>
+        <div class="o-logo o-float-1"><img src="https://www.figma.com/api/mcp/asset/ccbe36b5-1000-43f7-8193-9039ec3801ff" alt="Gmail"/></div>
         <div class="o-line-h"></div>
-        <div class="o-logo"><img src="https://www.figma.com/api/mcp/asset/a4771a84-911c-4986-9e3e-c9ac1603c7d9" alt="ClickUp"/></div>
+        <div class="o-logo o-float-2"><img src="https://www.figma.com/api/mcp/asset/a4771a84-911c-4986-9e3e-c9ac1603c7d9" alt="ClickUp"/></div>
       </div>
 
       <!-- Logo marquee strip -->
@@ -112,7 +118,6 @@
             <div class="marquee-pill"><span class="marquee-pill-dot" style="background:#7c3aed"></span>Typeform</div>
             <div class="marquee-pill"><span class="marquee-pill-dot" style="background:#0ea5e9"></span>Intercom</div>
             <div class="marquee-pill"><span class="marquee-pill-dot" style="background:#d97706"></span>Airtable</div>
-            <!-- duplicate for seamless loop -->
             <div class="marquee-pill"><span class="marquee-pill-dot" style="background:#0f172a"></span>Notion</div>
             <div class="marquee-pill"><span class="marquee-pill-dot" style="background:#6366f1"></span>Linear</div>
             <div class="marquee-pill"><span class="marquee-pill-dot" style="background:#000000"></span>Vercel</div>
@@ -156,15 +161,15 @@
     </section>
 
     <!-- ===================== FEATURES ===================== -->
-    <section class="section features-section" id="features">
+    <section class="section section--white features-section" id="features">
       <div class="section-inner">
-        <div class="section-header">
+        <div class="section-header anim-section-header">
           <p class="label-tag">Features</p>
           <h2 class="section-title">Everything your team needs. Nothing they don't.</h2>
         </div>
         <div class="features-grid">
 
-          <!-- Card 1 — Task list mockup -->
+          <!-- Card 1 -->
           <div class="feature-card card-reveal">
             <div class="feature-card__image">
               <div class="mock mock-tasks">
@@ -205,7 +210,7 @@
             </div>
           </div>
 
-          <!-- Card 2 — Dashboard mockup -->
+          <!-- Card 2 -->
           <div class="feature-card card-reveal">
             <div class="feature-card__image">
               <div class="mock mock-dashboard">
@@ -219,21 +224,9 @@
                   <div class="mock-stat-card"><span class="mock-stat-n">8</span><span class="mock-stat-l">Due today</span></div>
                 </div>
                 <div class="mock-progress-list">
-                  <div class="mock-prog-row">
-                    <span class="mock-prog-label">Product</span>
-                    <div class="mock-prog-bar"><div class="mock-prog-fill" style="--fill:78%;background:#2563eb"></div></div>
-                    <span class="mock-prog-pct">78%</span>
-                  </div>
-                  <div class="mock-prog-row">
-                    <span class="mock-prog-label">Design</span>
-                    <div class="mock-prog-bar"><div class="mock-prog-fill" style="--fill:55%;background:#7c3aed"></div></div>
-                    <span class="mock-prog-pct">55%</span>
-                  </div>
-                  <div class="mock-prog-row">
-                    <span class="mock-prog-label">Marketing</span>
-                    <div class="mock-prog-bar"><div class="mock-prog-fill" style="--fill:90%;background:#059669"></div></div>
-                    <span class="mock-prog-pct">90%</span>
-                  </div>
+                  <div class="mock-prog-row"><span class="mock-prog-label">Product</span><div class="mock-prog-bar"><div class="mock-prog-fill" style="--fill:78%;background:#2563eb"></div></div><span class="mock-prog-pct">78%</span></div>
+                  <div class="mock-prog-row"><span class="mock-prog-label">Design</span><div class="mock-prog-bar"><div class="mock-prog-fill" style="--fill:55%;background:#7c3aed"></div></div><span class="mock-prog-pct">55%</span></div>
+                  <div class="mock-prog-row"><span class="mock-prog-label">Marketing</span><div class="mock-prog-bar"><div class="mock-prog-fill" style="--fill:90%;background:#059669"></div></div><span class="mock-prog-pct">90%</span></div>
                 </div>
               </div>
             </div>
@@ -243,7 +236,7 @@
             </div>
           </div>
 
-          <!-- Card 3 — Kanban mockup -->
+          <!-- Card 3 -->
           <div class="feature-card card-reveal">
             <div class="feature-card__image">
               <div class="mock mock-kanban">
@@ -275,7 +268,7 @@
             </div>
           </div>
 
-          <!-- Card 4 — Onboarding mockup -->
+          <!-- Card 4 -->
           <div class="feature-card card-reveal">
             <div class="feature-card__image">
               <div class="mock mock-setup">
@@ -306,16 +299,15 @@
     </section>
 
     <!-- ===================== HOW IT WORKS ===================== -->
-    <section class="section how-section" id="how-it-works">
+    <section class="section section--white how-section" id="how-it-works">
       <div class="section-inner section-inner--center">
-        <div class="section-header section-header--center">
+        <div class="section-header section-header--center anim-section-header">
           <p class="label-tag">Starting is easy</p>
           <h2 class="section-title" style="max-width:400px">How does it work?</h2>
         </div>
 
         <div class="how-cards">
 
-          <!-- Step 1 -->
           <div class="how-card card-reveal">
             <div class="how-visual">
               <div class="mock mock-workspace">
@@ -324,15 +316,9 @@
                   <span class="mock-title-bar">flow.app/setup</span>
                 </div>
                 <div class="ws-body">
-                  <div class="ws-brand">
-                    <div class="ws-icon">F</div>
-                    <span class="ws-name">Flow</span>
-                  </div>
+                  <div class="ws-brand"><div class="ws-icon">F</div><span class="ws-name">Flow</span></div>
                   <p class="ws-heading">Name your workspace</p>
-                  <div class="ws-field">
-                    <span class="ws-field-text">Luma Labs</span>
-                    <span class="ws-cursor">|</span>
-                  </div>
+                  <div class="ws-field"><span class="ws-field-text">Luma Labs</span><span class="ws-cursor">|</span></div>
                   <p class="ws-domain">app.flow.app/luma-labs</p>
                   <div class="ws-colors">
                     <div class="ws-color" style="background:#2563eb"></div>
@@ -351,7 +337,6 @@
             <p class="how-desc">Sign up, name your workspace, and set up your first project in under 60 seconds. No setup wizard required.</p>
           </div>
 
-          <!-- Step 2 -->
           <div class="how-card card-reveal">
             <div class="how-visual">
               <div class="mock mock-invite-screen">
@@ -361,26 +346,11 @@
                 </div>
                 <div class="inv-body">
                   <p class="inv-heading">Invite your team</p>
-                  <div class="inv-input-row">
-                    <div class="inv-input">email@company.com</div>
-                    <div class="inv-btn">Invite</div>
-                  </div>
+                  <div class="inv-input-row"><div class="inv-input">email@company.com</div><div class="inv-btn">Invite</div></div>
                   <div class="inv-members">
-                    <div class="inv-member">
-                      <div class="inv-av" style="background:#dbeafe;color:#1d4ed8">S</div>
-                      <div class="inv-info"><span class="inv-name">Sarah K.</span><span class="inv-email">sarah@lumabs.co</span></div>
-                      <span class="inv-badge inv-badge--admin">Admin</span>
-                    </div>
-                    <div class="inv-member">
-                      <div class="inv-av" style="background:#d1fae5;color:#065f46">M</div>
-                      <div class="inv-info"><span class="inv-name">Marcus T.</span><span class="inv-email">marcus@grid.co</span></div>
-                      <span class="inv-badge inv-badge--member">Member</span>
-                    </div>
-                    <div class="inv-member inv-member--pending">
-                      <div class="inv-av" style="background:#fef3c7;color:#92400e">P</div>
-                      <div class="inv-info"><span class="inv-name">Priya N.</span><span class="inv-email">priya@vessel.io</span></div>
-                      <span class="inv-badge inv-badge--pending">Pending</span>
-                    </div>
+                    <div class="inv-member"><div class="inv-av" style="background:#dbeafe;color:#1d4ed8">S</div><div class="inv-info"><span class="inv-name">Sarah K.</span><span class="inv-email">sarah@lumabs.co</span></div><span class="inv-badge inv-badge--admin">Admin</span></div>
+                    <div class="inv-member"><div class="inv-av" style="background:#d1fae5;color:#065f46">M</div><div class="inv-info"><span class="inv-name">Marcus T.</span><span class="inv-email">marcus@grid.co</span></div><span class="inv-badge inv-badge--member">Member</span></div>
+                    <div class="inv-member inv-member--pending"><div class="inv-av" style="background:#fef3c7;color:#92400e">P</div><div class="inv-info"><span class="inv-name">Priya N.</span><span class="inv-email">priya@vessel.io</span></div><span class="inv-badge inv-badge--pending">Pending</span></div>
                   </div>
                   <p class="inv-note">3 invites sent · 2 accepted ✓</p>
                 </div>
@@ -391,7 +361,6 @@
             <p class="how-desc">Add teammates with one link. They join, see exactly what's on their plate, and can start contributing immediately.</p>
           </div>
 
-          <!-- Step 3 -->
           <div class="how-card card-reveal">
             <div class="how-visual">
               <div class="mock mock-sprint">
@@ -401,31 +370,11 @@
                   <span class="mock-badge-green">Active</span>
                 </div>
                 <div class="spr-body">
-                  <div class="spr-task spr-task--done">
-                    <div class="mock-check checked"></div>
-                    <span class="spr-name">API endpoints</span>
-                    <div class="mock-av" style="background:#bfdbfe;margin-left:auto"></div>
-                  </div>
-                  <div class="spr-task spr-task--active">
-                    <div class="mock-check"></div>
-                    <span class="spr-name">Dashboard v2</span>
-                    <div class="mock-av" style="background:#fde68a;margin-left:auto"></div>
-                    <span class="spr-badge">In progress</span>
-                  </div>
-                  <div class="spr-task">
-                    <div class="mock-check"></div>
-                    <span class="spr-name">User auth flow</span>
-                    <div class="mock-av" style="background:#e9d5ff;margin-left:auto"></div>
-                  </div>
-                  <div class="spr-velocity">
-                    <span class="spr-vel-label">Sprint progress</span>
-                    <div class="mock-prog-bar" style="flex:1"><div class="mock-prog-fill" style="--fill:65%;background:#2563eb"></div></div>
-                    <span class="spr-vel-pct">65%</span>
-                  </div>
-                  <div class="spr-activity">
-                    <span class="spr-dot"></span>
-                    <span class="spr-act-text">2 updates in the last hour</span>
-                  </div>
+                  <div class="spr-task spr-task--done"><div class="mock-check checked"></div><span class="spr-name">API endpoints</span><div class="mock-av" style="background:#bfdbfe;margin-left:auto"></div></div>
+                  <div class="spr-task spr-task--active"><div class="mock-check"></div><span class="spr-name">Dashboard v2</span><div class="mock-av" style="background:#fde68a;margin-left:auto"></div><span class="spr-badge">In progress</span></div>
+                  <div class="spr-task"><div class="mock-check"></div><span class="spr-name">User auth flow</span><div class="mock-av" style="background:#e9d5ff;margin-left:auto"></div></div>
+                  <div class="spr-velocity"><span class="spr-vel-label">Sprint progress</span><div class="mock-prog-bar" style="flex:1"><div class="mock-prog-fill" style="--fill:65%;background:#2563eb"></div></div><span class="spr-vel-pct">65%</span></div>
+                  <div class="spr-activity"><span class="spr-dot"></span><span class="spr-act-text">2 updates in the last hour</span></div>
                 </div>
               </div>
             </div>
@@ -439,22 +388,22 @@
     </section>
 
     <!-- ===================== TESTIMONIALS ===================== -->
-    <section class="section testimonials-section">
+    <section class="section section--dark testimonials-section">
       <div class="section-inner section-inner--center">
-        <div class="section-header section-header--center">
-          <p class="label-tag">Testimonial</p>
-          <h2 class="section-title">Trusted by teams that can't afford to slow down</h2>
+        <div class="section-header section-header--center anim-section-header">
+          <p class="label-tag label-tag--dim">Testimonial</p>
+          <h2 class="section-title section-title--light">Trusted by teams that can't afford to slow down</h2>
         </div>
         <div class="testimonial-block">
-          <div class="testimonial-featured">
+          <div class="testimonial-featured testimonial-featured--dark">
             <div class="testimonial-logo"><img src="https://www.figma.com/api/mcp/asset/95aae890-1e55-4ffd-82b9-9ab4f1ea3cf0" alt="Logoipsum"/></div>
-            <blockquote class="testimonial-quote">"We went from three tools and constant confusion to one place where everything lives. Onboarding new hires used to take a week — now it takes an afternoon."</blockquote>
+            <blockquote class="testimonial-quote testimonial-quote--dark">"We went from three tools and constant confusion to one place where everything lives. Onboarding new hires used to take a week — now it takes an afternoon."</blockquote>
             <div class="testimonial-author">
               <div class="testimonial-avatar"><img src="https://www.figma.com/api/mcp/asset/9919eaa9-a39f-4914-a0b0-ca824bc71660" alt="Sarah K."/></div>
-              <div><p class="author-name">Sarah K.</p><p class="author-role">Co-founder, Luma Labs</p></div>
+              <div><p class="author-name author-name--light">Sarah K.</p><p class="author-role author-role--dim">Co-founder, Luma Labs</p></div>
             </div>
           </div>
-          <div class="testimonial-strip">
+          <div class="testimonial-strip testimonial-strip--dark">
             <div class="strip-item strip-item--active"><img src="https://www.figma.com/api/mcp/asset/759b8b97-d528-46ac-8c73-9b0d60d1723c" alt="Sarah"/></div>
             <div class="strip-item" data-quote="Flow is the first tool my whole team actually uses. It's not buried under features they don't need." data-name="Marcus T." data-role="CEO, Gridline"><img src="https://www.figma.com/api/mcp/asset/759b8b97-d528-46ac-8c73-9b0d60d1723c" alt="Marcus"/></div>
             <div class="strip-item" data-quote="I used to start every Monday wondering what was happening. Now I open Flow and I know exactly where we stand." data-name="Priya N." data-role="Founder, Vessel"><img src="https://www.figma.com/api/mcp/asset/759b8b97-d528-46ac-8c73-9b0d60d1723c" alt="Priya"/></div>
@@ -467,7 +416,7 @@
     <!-- ===================== PRICING ===================== -->
     <section class="section pricing-section" id="pricing">
       <div class="section-inner section-inner--center">
-        <div class="section-header section-header--center">
+        <div class="section-header section-header--center anim-section-header">
           <p class="label-tag">Pricing</p>
           <h2 class="section-title">Simple pricing. No surprises.</h2>
           <p class="section-sub">Start free and scale as your team grows.</p>
@@ -480,7 +429,9 @@
               <p class="pricing-tagline">For small teams getting started.</p>
             </div>
             <ul class="pricing-features"><li>Up to 5 users</li><li>Unlimited tasks</li><li>3 active projects</li><li>7-day activity history</li></ul>
-            <a href="#" class="btn btn-outline btn-full">Start for free</a>
+            <a href="#" class="btn btn-outline btn-full">Start for free
+              <svg class="btn-icon" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
           </div>
           <div class="pricing-card pricing-card--pro card-reveal">
             <div class="pricing-card__badge">Most popular</div>
@@ -490,7 +441,9 @@
               <p class="pricing-tagline">For growing teams that need more room.</p>
             </div>
             <ul class="pricing-features"><li>Unlimited users</li><li>Unlimited projects</li><li>Full activity history</li><li>Priority support</li><li>Custom workflows</li></ul>
-            <a href="#" class="btn btn-dark btn-full">Start free trial</a>
+            <a href="#" class="btn btn-dark btn-full">Start free trial
+              <svg class="btn-icon" viewBox="0 0 16 16" fill="none"><path d="M9 2L4 9h4l-1 5 6-7H9l1-5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
           </div>
           <div class="pricing-card card-reveal">
             <div class="pricing-card__top">
@@ -499,7 +452,9 @@
               <p class="pricing-tagline">For teams that need control at scale.</p>
             </div>
             <ul class="pricing-features"><li>Everything in Pro</li><li>Admin controls & permissions</li><li>SSO and SCIM</li><li>Dedicated onboarding</li><li>SLA guarantee</li></ul>
-            <a href="#" class="btn btn-outline btn-full">Talk to sales</a>
+            <a href="#" class="btn btn-outline btn-full">Talk to sales
+              <svg class="btn-icon" viewBox="0 0 16 16" fill="none"><path d="M14 10a1 1 0 01-1 1H5L2 14V4a1 1 0 011-1h10a1 1 0 011 1v6z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
           </div>
         </div>
         <div class="pricing-faq">
@@ -516,19 +471,21 @@
 <!-- ===================== FOOTER (reveal) ===================== -->
 <footer class="site-footer">
 
-  <!-- CTA merged into footer -->
   <div class="footer-cta">
     <p class="label-tag label-tag--dim">Get started</p>
     <h2 class="footer-cta-headline">Ready to get your team in flow?</h2>
     <p class="footer-cta-sub">Join 12,000+ teams who stopped chasing updates and started shipping.</p>
     <div class="footer-cta-actions">
-      <a href="#pricing" class="btn btn-white btn-lg">Start for free</a>
-      <a href="#" class="btn btn-ghost btn-lg">Talk to sales →</a>
+      <a href="#pricing" class="btn btn-white btn-lg">Start for free
+        <svg class="btn-icon" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#" class="btn btn-ghost btn-lg">Talk to sales
+        <svg class="btn-icon" viewBox="0 0 16 16" fill="none"><path d="M14 10a1 1 0 01-1 1H5L2 14V4a1 1 0 011-1h10a1 1 0 011 1v6z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
     <p class="footer-cta-micro">No credit card required · Free for up to 5 users · Cancel anytime</p>
   </div>
 
-  <!-- Footer links -->
   <div class="footer-links-area">
     <div class="footer-brand-col">
       <span class="footer-logo">FLOW.</span>
@@ -536,37 +493,12 @@
       <p class="footer-built">Built for teams that move fast.</p>
     </div>
     <div class="footer-nav-cols">
-      <div class="footer-col">
-        <h4>Menu</h4>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#how-it-works">How it works</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Roadmap</a></li>
-          <li><a href="#">Privacy policy</a></li>
-          <li><a href="#">Terms of service</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>More</h4>
-        <ul>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Changelog</a></li>
-          <li><a href="#">Status</a></li>
-          <li><a href="#">Careers</a></li>
-        </ul>
-      </div>
+      <div class="footer-col"><h4>Menu</h4><ul><li><a href="#">Home</a></li><li><a href="#features">Features</a></li><li><a href="#how-it-works">How it works</a></li><li><a href="#pricing">Pricing</a></li></ul></div>
+      <div class="footer-col"><h4>Navigation</h4><ul><li><a href="#">Contact</a></li><li><a href="#">Roadmap</a></li><li><a href="#">Privacy policy</a></li><li><a href="#">Terms of service</a></li></ul></div>
+      <div class="footer-col"><h4>More</h4><ul><li><a href="#">Blog</a></li><li><a href="#">Changelog</a></li><li><a href="#">Status</a></li><li><a href="#">Careers</a></li></ul></div>
     </div>
   </div>
 
-  <!-- Watermark -->
   <div class="footer-watermark" aria-hidden="true">FLOW.</div>
 
 </footer>
