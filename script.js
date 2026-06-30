@@ -238,3 +238,14 @@ if (!document.getElementById('ripple-style')) {
   s.textContent = '@keyframes rippleOut { to { transform: scale(1); opacity: 0; } }';
   document.head.appendChild(s);
 }
+
+// ===================== TESTIMONIALS SCROLL-TRIGGERED DARK =====================
+const testimonialsSection = document.querySelector('.testimonials-section');
+if (testimonialsSection) {
+  const testimonialDarkObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      testimonialsSection.classList.toggle('is-dark', entry.isIntersecting);
+    });
+  }, { threshold: 0.2 });
+  testimonialDarkObserver.observe(testimonialsSection);
+}
